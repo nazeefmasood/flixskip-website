@@ -1,0 +1,55 @@
+# FlixSkip
+
+> Auto-skip intros, recaps, credits, and "Are you still watching?" prompts on Netflix
+
+## What is FlixSkip?
+
+FlixSkip is a free browser extension that automatically clicks "Skip Intro", "Skip Recap", and dismisses "Are you still watching?" prompts on Netflix. It works on Chrome, Firefox, Edge, and Brave browsers.
+
+## Features
+
+- **Skip Intro**: Automatically clicks "Skip Intro" the moment the button appears
+- **Skip Recap**: Automatically skips "Previously on..." recaps
+- **Still Watching**: Dismisses "Are you still watching?" prompts automatically
+- **Auto Next Episode**: Jumps to the next episode instantly without waiting for countdown
+- **Statistics**: Tracks total skips and time saved
+- **100% Private**: No data collection, no analytics, no external servers
+
+## Privacy
+
+FlixSkip does NOT:
+- Collect any personal data
+- Track your browsing
+- Use cookies or analytics
+- Make any external network requests
+
+All data stays on your device using browser's built-in storage API.
+
+## Pricing
+
+100% free. No ads. No premium tier. No subscriptions.
+
+## Supported Browsers
+
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+- Brave
+- Opera
+- All Chromium-based browsers
+
+## Installation
+
+Install from:
+- Chrome Web Store
+- Firefox Add-ons
+- Edge Add-ons
+
+## Developer
+
+Developed by Nazeef Masood
+GitHub: https://github.com/nazeefmasood/netflix-auto-skip
+
+## Support
+
+Buy Me a Coffee: https://buymeacoffee.com/nazeefmasood

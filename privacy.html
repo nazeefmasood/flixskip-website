@@ -5,70 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — FlixSkip</title>
   <meta name="description" content="FlixSkip privacy policy. We don't collect any data. No analytics, no tracking, no external servers. Your privacy is 100% protected.">
+  <meta name="author" content="Nazeef Masood">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nazeefmasood.github.io/flixskip-website/privacy.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --bg-primary: #0a0a0f;
-      --bg-secondary: #12121a;
-      --text-primary: #f5f5f7;
-      --text-secondary: #a0a0a8;
-      --accent: #e50914;
-      --accent-light: #ff4d58;
-      --border: rgba(255,255,255,0.1);
-    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --red: #e50914;
+      --white: #f5f5f5;
+      --gray: #888;
+      --gray-dark: #333;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
+      font-family: 'DM Sans', sans-serif;
+      background: var(--black);
+      color: var(--white);
       line-height: 1.7;
       min-height: 100vh;
     }
-    .container { max-width: 800px; margin: 0 auto; padding: 60px 24px; }
-    header { text-align: center; margin-bottom: 60px; }
-    .logo { font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; text-decoration: none; }
-    .logo span { background: linear-gradient(135deg, var(--accent), var(--accent-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+
+    /* Film grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    .subtitle {
+      color: var(--gray);
+      font-size: 1rem;
+      margin-top: 8px;
+    }
+
     .badge {
       display: inline-block;
-      background: linear-gradient(135deg, rgba(229,9,20,0.2), rgba(255,77,88,0.2));
-      border: 1px solid rgba(229,9,20,0.3);
+      background: var(--red);
       padding: 8px 20px;
-      border-radius: 30px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       margin-top: 20px;
     }
-    h1 { font-size: 2.5rem; margin-bottom: 16px; }
-    h2 { font-size: 1.5rem; margin: 40px 0 16px; color: var(--text-primary); }
-    p { color: var(--text-secondary); margin-bottom: 16px; }
-    ul { color: var(--text-secondary); margin-left: 24px; margin-bottom: 16px; }
-    li { margin-bottom: 8px; }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .date {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+
     .highlight-box {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
       padding: 24px;
       margin: 32px 0;
     }
-    .highlight-box h3 { color: var(--text-primary); margin-bottom: 12px; font-size: 1.1rem; }
-    .check { color: #22c55e; margin-right: 8px; }
-    .date { color: var(--text-secondary); font-size: 0.9rem; margin-top: 40px; }
-    footer { text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }
-    footer a { color: var(--accent-light); text-decoration: none; }
+
+    .highlight-box h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .check {
+      color: #22c55e;
+      margin-right: 8px;
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      margin: 40px 0 16px;
+    }
+
+    p {
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+
+    ul {
+      color: var(--gray);
+      margin-left: 24px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    code {
+      background: rgba(255,255,255,0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    a {
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-link {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    .footer-link:hover {
+      color: var(--white);
+    }
+
+    .developer {
+      color: var(--gray);
+      font-size: 0.85rem;
+      margin-top: 20px;
+    }
+
+    .developer a {
+      color: var(--white);
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <a href="/" class="logo"><span>Flix</span>Skip</a>
+      <a href="/" class="logo">FLIXSKIP</a>
       <p class="subtitle">Auto Skip Streaming Intros</p>
       <div class="badge">100% Privacy Protected</div>
     </header>
 
     <main>
-      <h1>Privacy Policy</h1>
-      <p><strong>Last Updated:</strong> February 2026</p>
+      <h1>PRIVACY POLICY</h1>
+      <p class="date">Last Updated: February 2026</p>
 
       <div class="highlight-box">
         <h3>TL;DR — Your Privacy is 100% Protected</h3>
@@ -81,43 +200,44 @@
         </ul>
       </div>
 
-      <h2>Data Collection</h2>
+      <h2>DATA COLLECTION</h2>
       <p>FlixSkip does <strong>not</strong> collect, transmit, store, or process any personal data whatsoever. We have no servers, no databases, and no analytics systems.</p>
 
-      <h2>Local Storage</h2>
+      <h2>LOCAL STORAGE</h2>
       <p>The extension stores your preferences locally on your device using your browser's built-in storage API (<code>chrome.storage.sync</code> or <code>browser.storage</code>). This data never leaves your computer and is only used to remember your toggle settings.</p>
       <ul>
         <li>Feature toggle states (on/off)</li>
         <li>Statistics (skips count, time saved)</li>
       </ul>
 
-      <h2>External Communications</h2>
+      <h2>EXTERNAL COMMUNICATIONS</h2>
       <p>FlixSkip makes <strong>zero</strong> external network requests. The extension contains no tracking pixels, no analytics scripts, no advertising SDKs, and no server communication of any kind.</p>
 
-      <h2>Permissions Explained</h2>
+      <h2>PERMISSIONS EXPLAINED</h2>
       <ul>
         <li><strong>storage</strong> — To save your preferences locally</li>
         <li><strong>activeTab</strong> — To detect skip buttons on the current tab</li>
         <li><strong>netflix.com access</strong> — The extension only activates on Netflix pages</li>
       </ul>
 
-      <h2>Third-Party Services</h2>
+      <h2>THIRD-PARTY SERVICES</h2>
       <p>FlixSkip does not integrate with any third-party services, APIs, or external resources. The extension is completely self-contained.</p>
 
-      <h2>Children's Privacy</h2>
+      <h2>CHILDREN'S PRIVACY</h2>
       <p>Since we collect no data whatsoever, our extension is safe for users of all ages. We have no age restrictions.</p>
 
-      <h2>Changes to This Policy</h2>
+      <h2>CHANGES TO THIS POLICY</h2>
       <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
 
-      <h2>Contact</h2>
-      <p>If you have questions about this privacy policy, please open an issue on our <a href="https://github.com/nazeefmasood/netflix-auto-skip" style="color: #ff4d58;">GitHub repository</a>.</p>
+      <h2>CONTACT</h2>
+      <p>If you have questions about this privacy policy, please open an issue on our <a href="https://github.com/nazeefmasood/netflix-auto-skip">GitHub repository</a>.</p>
 
-      <p class="date">This privacy policy was last updated on February 15, 2026.</p>
+      <p style="color: var(--gray); font-size: 0.85rem; margin-top: 40px;">This privacy policy was last updated on February 15, 2026.</p>
     </main>
 
     <footer>
-      <p><a href="https://nazeefmasood.github.io/flixskip-website/">← Back to FlixSkip</a></p>
+      <a href="https://nazeefmasood.github.io/flixskip-website/" class="footer-link">← Back to FlixSkip</a>
+      <p class="developer">Developed by <a href="https://github.com/nazeefmasood">Nazeef Masood</a></p>
     </footer>
   </div>
 </body>

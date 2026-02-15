@@ -25,17 +25,6 @@ flixskip-website/
 └── icons/          # Favicon and app icons
 ```
 
-## Deployment
-
-This site is deployed via GitHub Pages from the main branch.
-
-## Development
-
-The site is a static HTML page with inline CSS. No build process required.
-
-1. Clone the repository
-2. Open `index.html` in a browser
-3. Make changes and push to deploy
 
 ## Credits
 

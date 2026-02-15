@@ -19,6 +19,137 @@
   <link rel="icon" type="image/png" sizes="16x16" href="icons/icon16.png">
   <link rel="icon" type="image/png" sizes="48x48" href="icons/icon48.png">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FlixSkip — Auto Skip Netflix Intros">
+  <meta name="twitter:description" content="Auto-skip intros, recaps, and idle prompts on Netflix. Free browser extension.">
+  <meta name="twitter:image" content="https://nazeefmasood.github.io/flixskip-website/promo-920x680.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FlixSkip",
+    "url": "https://nazeefmasood.github.io/flixskip-website/",
+    "description": "Auto-skip intros, recaps, credits, and 'Are you still watching?' prompts on Netflix. Free browser extension.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "FlixSkip",
+      "url": "https://nazeefmasood.github.io/flixskip-website/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nazeefmasood.github.io/flixskip-website/icons/icon128.png"
+      }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FlixSkip",
+    "description": "Auto-skip intros, recaps, credits, and 'Are you still watching?' prompts on Netflix. Free browser extension for Chrome, Firefox, Edge.",
+    "url": "https://nazeefmasood.github.io/flixskip-website/",
+    "applicationCategory": "BrowserExtension",
+    "operatingSystem": "Chrome, Firefox, Edge, Brave",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Nazeef Masood",
+      "url": "https://github.com/nazeefmasood"
+    },
+    "screenshot": "https://nazeefmasood.github.io/flixskip-website/screenshot-1280x800.png",
+    "softwareVersion": "1.0.0",
+    "datePublished": "2026-02-15"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://nazeefmasood.github.io/flixskip-website/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Features",
+        "item": "https://nazeefmasood.github.io/flixskip-website/#features"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "FAQ",
+        "item": "https://nazeefmasood.github.io/flixskip-website/#faq"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Privacy Policy",
+        "item": "https://nazeefmasood.github.io/flixskip-website/privacy.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is FlixSkip completely free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! FlixSkip is 100% free with no ads, no premium tier, and no hidden costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does FlixSkip collect my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. FlixSkip does not collect, transmit, or store any personal data. All settings are saved locally in your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which browsers are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chrome, Firefox, Edge, Brave, Opera, and all Chromium-based browsers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I toggle features on/off?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Click the FlixSkip icon in your browser toolbar to open the popup and toggle each feature."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this affiliated with Netflix?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. FlixSkip is an independent project. It is not affiliated with Netflix in any way."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,6 +204,22 @@
     /* ─────────────────────────────────────────────
        NAVIGATION
     ─────────────────────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--red);
+      color: var(--white);
+      padding: 8px 16px;
+      text-decoration: none;
+      font-weight: 600;
+      z-index: 10000;
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
     nav {
       position: fixed;
       top: 0;
@@ -739,6 +886,8 @@
   </style>
 </head>
 <body>
+  <!-- Skip to content for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Navigation -->
   <nav>
@@ -761,7 +910,7 @@
   </nav>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="main-content">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
@@ -769,8 +918,8 @@
             <span class="badge-dot"></span>
             Free • No Ads
           </div>
-          <h1 class="hero-title">SKIP THE<br><span>CLICKING</span></h1>
-          <p class="hero-subtitle">FlixSkip automatically skips intros, recaps, and "Are you still watching?" prompts on Netflix. Zero clicks. Hands-free binge watching.</p>
+          <h1 class="hero-title">THE #1 AUTO-SKIP<br><span>EXTENSION</span></h1>
+          <p class="hero-subtitle">Tired of clicking "Skip Intro" every episode? FlixSkip does it for you — instantly, silently, and automatically. Zero clicks. Hands-free binge watching.</p>
           <div class="hero-buttons">
             <a href="#install" class="btn btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -820,16 +969,16 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat">
-          <div class="stat-value">50K+</div>
-          <div class="stat-label">Active Users</div>
+          <div class="stat-value">Free</div>
+          <div class="stat-label">Forever</div>
         </div>
         <div class="stat">
-          <div class="stat-value">2M+</div>
-          <div class="stat-label">Skips This Month</div>
+          <div class="stat-value">Zero</div>
+          <div class="stat-label">Ads</div>
         </div>
         <div class="stat">
-          <div class="stat-value">4.8★</div>
-          <div class="stat-label">Rating</div>
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Private</div>
         </div>
         <div class="stat">
           <div class="stat-value">0</div>
@@ -854,7 +1003,7 @@
             </svg>
           </div>
           <h3 class="feature-title">SKIP INTRO</h3>
-          <p class="feature-desc">Automatically clicks "Skip Intro" the moment it appears. Never click that button again.</p>
+          <p class="feature-desc">Automatically clicks "Skip Intro" the moment the button appears. Never click it again.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -863,7 +1012,7 @@
             </svg>
           </div>
           <h3 class="feature-title">SKIP RECAP</h3>
-          <p class="feature-desc">Automatically skips "Previously on..." recaps so you get straight to new content.</p>
+          <p class="feature-desc">Instantly bypasses "Previously on…" recaps. Get straight to new content.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -872,7 +1021,7 @@
             </svg>
           </div>
           <h3 class="feature-title">STILL WATCHING</h3>
-          <p class="feature-desc">Dismisses "Are you still watching?" prompts automatically. Your binge never pauses.</p>
+          <p class="feature-desc">Automatically dismisses "Are you still watching?" prompts. Your marathon never pauses.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -881,7 +1030,7 @@
             </svg>
           </div>
           <h3 class="feature-title">AUTO NEXT EPISODE</h3>
-          <p class="feature-desc">Jumps to the next episode instantly without waiting for the countdown.</p>
+          <p class="feature-desc">Jumps to the next episode instantly without waiting for the countdown timer.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -899,7 +1048,7 @@
             </svg>
           </div>
           <h3 class="feature-title">100% PRIVATE</h3>
-          <p class="feature-desc">No data collection. No analytics. No external servers. Your privacy is guaranteed.</p>
+          <p class="feature-desc">No data collection. No analytics. No tracking. No external servers. Your privacy is 100% protected.</p>
         </div>
       </div>
     </div>
@@ -937,7 +1086,7 @@
     <div class="container">
       <div class="install-box">
         <h2 class="install-title">READY TO SKIP?</h2>
-        <p class="install-desc">Join 50,000+ binge watchers who save time every day with FlixSkip.</p>
+        <p class="install-desc">Install FlixSkip now and never click "Skip Intro" again!</p>
         <div class="install-buttons">
           <a href="https://chrome.google.com/webstore/detail/flixskip" class="btn btn-primary" target="_blank">
             Chrome
